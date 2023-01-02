@@ -1,0 +1,69 @@
+@import "../../../colors.scss";
+
+.header {
+  display: flex;
+  gap: 1.2rem;
+  background-color: $main;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  padding: 2.4rem;
+
+  .image {
+    background: #f0f0f0;
+    width: 8.5rem;
+    height: 8.5rem;
+
+    border-radius: 50%;
+  }
+
+  .name-teacher {
+    color: $white;
+
+    display: inline-flex;
+    flex-direction: column;
+
+    margin-top: 2.5rem;
+  }
+
+  .button-exit-app {
+    background-color: transparent;
+    color: $white;
+    font-size: 3rem;
+    border: none;
+
+    position: absolute;
+    top: 2.4rem;
+    right: 2.4rem;
+  }
+}
+
+.title-page {
+  margin-top: 12rem;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+  gap: 2.4rem;
+
+  .button-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background: $white;
+
+    border: 0.1rem dashed $green;
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    color: $green;
+
+    width: 100%;
+    padding: 2.4rem;
+  }
+}
