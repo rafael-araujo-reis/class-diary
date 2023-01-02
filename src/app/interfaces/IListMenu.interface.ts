@@ -1,5 +1,6 @@
 export interface IListMenu {
   title: string;
   icon: string;
-  ative: boolean;
+  path: string;
+  active: boolean;
 }
