@@ -1,8 +1,13 @@
-<div class="container-menu">
-  <ul>
-    <li *ngFor="let item of listMenu" class="item-menu">
+<nav class="container-menu" *ngIf="listMenu">
+  <ul class="menu-list">
+    <button
+      *ngFor="let item of listMenu"
+      class="item-menu"
+      (click)="navigateRouter(item.path)"
+      [disabled]="!item.active"
+    >
       <mat-icon class="icon">{{ item.icon }}</mat-icon>
       <p class="title">{{ item.title }}</p>
-    </li>
+    </button>
   </ul>
-</div>
+</nav>

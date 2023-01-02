@@ -1,23 +1,29 @@
+import { MenuApplicationService } from './../../services/menu-application.service';
 import { IListMenu } from './../../interfaces/IListMenu.interface';
 import { Component, OnInit } from '@angular/core';
-
+import { RouterNavigate } from 'src/app/shared/utils/router-navigate';
 @Component({
   selector: 'app-menu-tabs',
   templateUrl: './menu-tabs.component.html',
   styleUrls: ['./menu-tabs.component.scss'],
 })
 export class MenuTabsComponent implements OnInit {
-  listMenu: IListMenu[] = [
-    { title: 'plano de aula', icon: 'book', ative: false },
-    { title: 'diário', icon: 'format_list_bulleted', ative: true },
-    { title: 'professor', icon: 'person', ative: true },
-  ];
+  listMenu: IListMenu[] = [];
 
-  constructor() {}
+  constructor(
+    private menu: MenuApplicationService,
+    private navigateTo: RouterNavigate
+  ) {}
 
   ngOnInit(): void {
     this.getItemsMenu();
   }
 
-  getItemsMenu() {}
+  getItemsMenu() {
+    this.menu.getMenu().subscribe((listMenu) => (this.listMenu = listMenu));
+  }
+
+  navigateRouter(path: string) {
+    this.navigateTo.navigatePath(path);
+  }
 }
