@@ -40,30 +40,34 @@
   }
 }
 
-.title-page {
-  margin-top: 12rem;
-  text-align: center;
-}
+.contente {
+  .title-page {
+    margin-top: 12rem;
+    text-align: center;
+  }
 
-.buttons {
-  display: flex;
-  flex-direction: column;
-  margin-top: 4rem;
-  gap: 2.4rem;
-
-  .button-empty {
+  .buttons {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    background: $white;
+    flex-direction: column;
+    margin-top: 4rem;
+    gap: 2.4rem;
+    max-width: 30rem;
+    margin-inline: auto;
 
-    border: 0.1rem dashed $green;
-    border-radius: 0.8rem;
-    font-size: 1.6rem;
-    color: $green;
+    .button-empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      background: $white;
 
-    width: 100%;
-    padding: 2.4rem;
+      border: 0.1rem dashed $green;
+      border-radius: 0.8rem;
+      font-size: 1.6rem;
+      color: $green;
+
+      width: 100%;
+      padding: 2.4rem;
+    }
   }
 }
