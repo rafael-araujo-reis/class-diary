@@ -1,0 +1,25 @@
+{
+  "menu": [
+    {
+      "title": "plano de aula",
+      "icon": "book",
+      "path": "lesson-plan",
+      "active": false
+    },
+    {
+      "title": "diário",
+      "icon": "format_list_bulleted",
+      "path": "home",
+      "active": true
+    },
+    {
+      "title": "professor",
+      "icon": "person",
+      "path": "area-teacher",
+      "active": true
+    }
+  ],
+  "students": [],
+  "materials": [],
+  "notes": []
+}
