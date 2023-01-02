@@ -10,21 +10,29 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 const modules = [ComponentsModule, ViewsModule];
-const material = [
-  BrowserAnimationsModule,
-  MatIconModule,
+const material = [MatIconModule];
+const commons = [
+  RouterModule,
   BrowserModule,
+  BrowserAnimationsModule,
   FormsModule,
   HttpClientModule,
 ];
 @NgModule({
   declarations: [AppComponent, MenuTabsComponent],
-  imports: [BrowserModule, AppRoutingModule, ...modules, ...material],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ...modules,
+    ...material,
+    ...commons,
+  ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [...modules],
+  exports: [...modules, material],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
