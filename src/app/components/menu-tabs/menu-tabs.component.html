@@ -1,1 +1,8 @@
-<p>menu-tabs works!</p>
+<div class="container-menu">
+  <ul>
+    <li *ngFor="let item of listMenu" class="item-menu">
+      <mat-icon class="icon">{{ item.icon }}</mat-icon>
+      <p class="title">{{ item.title }}</p>
+    </li>
+  </ul>
+</div>
