@@ -10,7 +10,7 @@
 
 .container-students {
   display: flex;
-  gap: 1.6rem;
+  gap: 1rem;
   flex-wrap: nowrap;
   overflow-x: scroll;
   padding-inline: 1.6rem;
@@ -26,9 +26,12 @@
 
     .image {
       height: 36rem;
-      background-color: #f0f0f0;
       border-radius: 0.8rem;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
+
     .description-card {
       padding-block: 1.6rem;
       color: $main;

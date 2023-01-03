@@ -1,3 +1,5 @@
+import { IListStudents } from './../../interfaces/IListStudents.interface';
+import { ListStudentsService } from './../../services/list-students.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -14,11 +16,12 @@ export class AreaTeacherComponent implements OnInit {
   };
 
   listMaterials = [];
-  listStudents = [];
+  listStudents: IListStudents[] = [];
 
-  constructor() {}
+  constructor(private studentsService: ListStudentsService) {}
 
   ngOnInit(): void {
+    this.getListStudents();
     this.definitionTitlePage();
   }
 
@@ -33,5 +36,11 @@ export class AreaTeacherComponent implements OnInit {
     } else if (listSizeMaterial === 0 && listSizeStudents > 0) {
       this.titlePage = 'Sua lista de materiais está vazia';
     }
+  }
+
+  getListStudents() {
+    return this.studentsService
+      .getListStudents()
+      .subscribe((listStudents) => (this.listStudents = listStudents));
   }
 }

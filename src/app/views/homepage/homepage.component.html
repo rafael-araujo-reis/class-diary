@@ -7,25 +7,14 @@
 
   <h2 class="title-home">Escolha um aluno</h2>
   <div class="container-students">
-    <div class="card">
-      <div class="image"></div>
+    <div class="card" *ngFor="let student of listStudents" [id]="student.id">
+      <div
+        class="image"
+        [ngStyle]="{ 'background-image': 'url(' + student.photoStudent + ')' }"
+      ></div>
       <div class="description-card">
-        <p class="title">Aluno</p>
-        <span class="subtitle">3º ano</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image"></div>
-      <div class="description-card">
-        <p class="title">Aluno</p>
-        <span class="subtitle">3º ano</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="image"></div>
-      <div class="description-card">
-        <p class="title">Aluno</p>
-        <span class="subtitle">3º ano</span>
+        <p class="title">{{ student.nameStudent.name }}</p>
+        <span class="subtitle">{{ student.studySeries }}</span>
       </div>
     </div>
   </div>

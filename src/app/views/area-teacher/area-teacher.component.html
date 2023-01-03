@@ -1,5 +1,5 @@
 <section>
-  <div class="header">
+  <header class="header">
     <div class="image"></div>
     <h1 class="name-teacher">
       {{ teacher.name }}
@@ -8,19 +8,45 @@
     <button class="button-exit-app">
       <mat-icon>exit_to_app</mat-icon>
     </button>
-  </div>
+  </header>
 
   <div class="contente">
-    <h2 class="title-page">{{ titlePage }}</h2>
-    <div class="buttons">
-      <button class="button-empty">
-        <mat-icon>add_circle_outline</mat-icon>
-        cadastrar material
-      </button>
-      <button class="button-empty">
-        <mat-icon>add_circle_outline</mat-icon>
-        cadastrar aluno
-      </button>
+    <div class="listStudents">
+      <h2 class="title-page">Alunos</h2>
+      <ul class="cards">
+        <li *ngFor="let student of listStudents" class="card">
+          <div
+            class="image"
+            [ngStyle]="{
+              'background-image': 'url(' + student.photoStudent + ')'
+            }"
+          ></div>
+          <div class="description">
+            <p class="title">
+              {{ student.nameStudent.name }} {{ student.nameStudent.surname }}
+            </p>
+            <span class="subtitle">{{ student.studySeries }}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="listMaterials">
+      <h2 class="title-page">Materiais</h2>
+    </div>
+
+    <div class="emptyLists">
+      <h2 class="title-page">{{ titlePage }}</h2>
+      <div class="buttons">
+        <button class="button-empty">
+          <mat-icon>add_circle_outline</mat-icon>
+          cadastrar material
+        </button>
+        <button class="button-empty">
+          <mat-icon>add_circle_outline</mat-icon>
+          cadastrar aluno
+        </button>
+      </div>
     </div>
   </div>
 </section>
