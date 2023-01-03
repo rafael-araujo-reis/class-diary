@@ -19,7 +19,38 @@
       "active": true
     }
   ],
-  "students": [],
+  "students": [
+    {
+      "id": "4177f1e5-1fdb-46c6-961a-5a4e2942cd19",
+      "nameStudent": {
+        "name": "Davi Luiz",
+        "surname": "da Silva Reis"
+      },
+      "photoStudent": "https://img.freepik.com/fotos-premium/menino-sorridente-de-alto-angulo-com-oculos-estudando_23-2148355253.jpg?w=996",
+      "studySeries": "3ª série",
+      "linkedMaterials": []
+    },
+    {
+      "id": "2afb9577-b0ad-4d7e-9537-7bb1d88a0d16",
+      "nameStudent": {
+        "name": "Felipe Luiz",
+        "surname": "da Silva Reis"
+      },
+      "photoStudent": "https://img.freepik.com/fotos-gratis/crianca-de-tiro-medio-estudando-em-casa_23-2148888832.jpg?w=996&t=st=1672740101~exp=1672740701~hmac=728e304b6904f626167c5da0591e27b5ef5fadac7eb8593cfce0e24ec55a0c16",
+      "studySeries": "1ª série",
+      "linkedMaterials": []
+    },
+    {
+      "id": "52bce03d-d247-426f-a643-a3d9bf93165b",
+      "nameStudent": {
+        "name": "Bernando Luiz",
+        "surname": "da Silva Reis"
+      },
+      "photoStudent": "https://img.freepik.com/fotos-gratis/garoto-observando-ou-estudando-modelo-de-globo-educacional-na-sala-de-aula_1150-3832.jpg?w=996&t=st=1672741971~exp=1672742571~hmac=ad5ecde7a0be8b9cf7a94bf97f703fccf42308cffc6310386d8c4bd45be708ff",
+      "studySeries": "Educação infantil 1",
+      "linkedMaterials": []
+    }
+  ],
   "materials": [],
   "notes": []
 }
