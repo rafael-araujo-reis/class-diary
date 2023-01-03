@@ -11,7 +11,7 @@
   </header>
 
   <div class="contente">
-    <div class="listStudents">
+    <div class="listStudents" *ngIf="listStudents.length">
       <h2 class="title-page">Alunos</h2>
       <ul class="cards">
         <li *ngFor="let student of listStudents" class="card">
@@ -31,7 +31,7 @@
       </ul>
     </div>
 
-    <div class="listMaterials">
+    <div class="listMaterials" *ngIf="listMaterials.length">
       <h2 class="title-page">Materiais</h2>
     </div>
 

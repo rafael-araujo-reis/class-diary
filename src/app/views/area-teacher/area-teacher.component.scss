@@ -42,6 +42,9 @@
 
 .contente {
   margin-top: 12rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 
   .listStudents {
     .cards {
