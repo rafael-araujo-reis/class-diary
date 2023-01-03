@@ -101,6 +101,59 @@
     }
   }
 
+  .listMaterials {
+    height: 21rem;
+    z-index: 2;
+
+    .button {
+      margin-top: 17.5rem;
+    }
+
+    .container-materials {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      padding-inline: 2rem;
+
+      position: absolute;
+      left: 0;
+      right: 0;
+
+      .card {
+        min-width: 8rem;
+        margin: 0.8rem 0.4rem 0;
+
+        .image {
+          height: 11rem;
+          border-radius: 0.8rem;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
+        .description-card {
+          padding-top: 0.4rem;
+          color: $main;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-align: center;
+          }
+
+          .subtitle {
+            font-weight: 400;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
   .emptyLists {
     .title-page {
       text-align: center;

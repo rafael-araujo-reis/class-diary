@@ -37,6 +37,22 @@
 
     <div class="listMaterials" *ngIf="listMaterials.length">
       <h2 class="title-page">Materiais</h2>
+
+      <div class="container-materials">
+        <div class="card" *ngFor="let material of listMaterials">
+          <div
+            class="image"
+            [ngStyle]="{
+              'background-image': 'url(' + material.urlImage + ')'
+            }"
+          ></div>
+          <div class="description-card">
+            <p class="title">{{ material.matter }}</p>
+            <span class="subtitle">{{ material.seriesBelonging }}</span>
+          </div>
+        </div>
+      </div>
+
       <button class="button">
         <mat-icon>add_circle_outline</mat-icon>
         cadastrar material

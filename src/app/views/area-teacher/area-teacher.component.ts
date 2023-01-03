@@ -1,4 +1,6 @@
-import { AfterViewChecked, Component, Input, OnInit } from '@angular/core';
+import { ListMaterialsService } from './../../services/list-materials.service';
+import { IListMaterials } from './../../interfaces/IListMaterials.interface';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { IListStudents } from './../../interfaces/IListStudents.interface';
 import { ListStudentsService } from './../../services/list-students.service';
 
@@ -15,13 +17,17 @@ export class AreaTeacherComponent implements OnInit, AfterViewChecked {
     surname: 'da Silva Reis',
   };
 
-  @Input() listMaterials = [];
-  @Input() listStudents: IListStudents[] = [];
+  listMaterials: IListMaterials[] = [];
+  listStudents: IListStudents[] = [];
 
-  constructor(private studentsService: ListStudentsService) {}
+  constructor(
+    private studentsService: ListStudentsService,
+    private materialsService: ListMaterialsService
+  ) {}
 
   ngOnInit(): void {
     this.getListStudents();
+    this.getListMaterials();
   }
 
   ngAfterViewChecked() {
@@ -48,5 +54,11 @@ export class AreaTeacherComponent implements OnInit, AfterViewChecked {
     return this.studentsService
       .getListStudents()
       .subscribe((listStudents) => (this.listStudents = listStudents));
+  }
+
+  getListMaterials() {
+    return this.materialsService
+      .getListMaterials()
+      .subscribe((listMaterials) => (this.listMaterials = listMaterials));
   }
 }
