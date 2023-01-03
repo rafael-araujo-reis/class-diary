@@ -35,7 +35,10 @@
       <h2 class="title-page">Materiais</h2>
     </div>
 
-    <div class="emptyLists">
+    <div
+      class="emptyLists"
+      *ngIf="!listStudents.length || !listMaterials.length"
+    >
       <h2 class="title-page">{{ titlePage }}</h2>
       <div class="buttons">
         <button class="button-empty">
