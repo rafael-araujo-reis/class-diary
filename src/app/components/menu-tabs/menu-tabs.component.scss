@@ -2,6 +2,7 @@
 
 .container-menu {
   position: relative;
+  z-index: 10;
 
   .menu-list {
     position: fixed;
