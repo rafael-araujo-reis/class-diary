@@ -28,11 +28,19 @@
             <span class="subtitle">{{ student.studySeries }}</span>
           </div>
         </li>
+        <button class="button">
+          <mat-icon>add_circle_outline</mat-icon>
+          cadastrar aluno
+        </button>
       </ul>
     </div>
 
     <div class="listMaterials" *ngIf="listMaterials.length">
       <h2 class="title-page">Materiais</h2>
+      <button class="button">
+        <mat-icon>add_circle_outline</mat-icon>
+        cadastrar material
+      </button>
     </div>
 
     <div
@@ -41,11 +49,11 @@
     >
       <h2 class="title-page">{{ titlePage }}</h2>
       <div class="buttons">
-        <button class="button-empty">
+        <button class="button button-empty" *ngIf="!listMaterials.length">
           <mat-icon>add_circle_outline</mat-icon>
           cadastrar material
         </button>
-        <button class="button-empty">
+        <button class="button button-empty" *ngIf="!listStudents.length">
           <mat-icon>add_circle_outline</mat-icon>
           cadastrar aluno
         </button>

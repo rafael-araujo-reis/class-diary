@@ -1,13 +1,13 @@
+import { AfterViewChecked, Component, Input, OnInit } from '@angular/core';
 import { IListStudents } from './../../interfaces/IListStudents.interface';
 import { ListStudentsService } from './../../services/list-students.service';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-area-teacher',
   templateUrl: './area-teacher.component.html',
   styleUrls: ['./area-teacher.component.scss'],
 })
-export class AreaTeacherComponent implements OnInit {
+export class AreaTeacherComponent implements OnInit, AfterViewChecked {
   titlePage = '';
 
   teacher = {
@@ -15,13 +15,16 @@ export class AreaTeacherComponent implements OnInit {
     surname: 'da Silva Reis',
   };
 
-  listMaterials = [];
-  listStudents: IListStudents[] = [];
+  @Input() listMaterials = [];
+  @Input() listStudents: IListStudents[] = [];
 
   constructor(private studentsService: ListStudentsService) {}
 
   ngOnInit(): void {
     this.getListStudents();
+  }
+
+  ngAfterViewChecked() {
     this.definitionTitlePage();
   }
 
@@ -29,13 +32,16 @@ export class AreaTeacherComponent implements OnInit {
     const listSizeMaterial = this.listMaterials.length;
     const listSizeStudents = this.listStudents.length;
 
+    let definition = '';
+
     if (listSizeMaterial === 0 && listSizeStudents === 0) {
-      this.titlePage = 'Sua lista de materiais e alunos está vazia';
+      definition = 'materais e alunos';
     } else if (listSizeMaterial > 0 && listSizeStudents === 0) {
-      this.titlePage = 'Sua lista de alunos está vazia';
+      definition = 'alunos';
     } else if (listSizeMaterial === 0 && listSizeStudents > 0) {
-      this.titlePage = 'Sua lista de materiais está vazia';
+      definition = 'materiais';
     }
+    this.titlePage = `Sua lista de ${definition} está vazia`;
   }
 
   getListStudents() {

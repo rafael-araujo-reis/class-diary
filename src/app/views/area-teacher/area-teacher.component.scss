@@ -42,6 +42,7 @@
 
 .contente {
   margin-top: 12rem;
+  padding-bottom: 12rem;
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -93,6 +94,10 @@
           }
         }
       }
+
+      .button {
+        margin-top: 0.8rem;
+      }
     }
   }
 
@@ -110,20 +115,27 @@
       margin-inline: auto;
 
       .button-empty {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.8rem;
-        background: $white;
-
-        border: 0.1rem dashed $green;
-        border-radius: 0.8rem;
-        font-size: 1.6rem;
         color: $green;
+        border-color: $green;
 
-        width: 100%;
         padding: 2.4rem;
       }
     }
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background: $white;
+
+    border: 0.1rem dashed $main;
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    color: $main;
+
+    width: 100%;
+    padding: 1.2rem;
   }
 }
