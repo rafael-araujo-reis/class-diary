@@ -51,6 +51,55 @@
       "linkedMaterials": []
     }
   ],
-  "materials": [],
+  "materials": [
+    {
+      "id": "9d3ce8f3-f2c2-4024-a148-4b453a25e172",
+      "matter": "Matemática",
+      "seriesBelonging": "1ª série",
+      "urlImage": "https://m.media-amazon.com/images/I/81Oo34IL1IL.jpg"
+    },
+    {
+      "id": "85f7d379-7ad3-42ba-a869-2ccc1f77444e",
+      "matter": "História",
+      "seriesBelonging": "2ª série",
+      "urlImage": "https://a-static.mlcdn.com.br/1500x1500/livro-eu-gosto-mais-historia-2o-ano/livrosnainternet/167003-167007/a50c138c7f6c1bbb54f0fd3c115fed57.jpg"
+    },
+    {
+      "id": "8504f908-077f-4c64-add4-97b45f9cde96",
+      "matter": "Integrado",
+      "seriesBelonging": "1ª série",
+      "urlImage": "https://a-static.mlcdn.com.br/800x560/livro-eu-gosto-mais-integrado-1o-ano-bncc/livrosnainternet/167698-167699/7fc0fb08959060653d13faeb2445fd5a.png"
+    },
+    {
+      "id": "b624d356-6875-4803-a939-281182f35d70",
+      "matter": "Língua portuguesa",
+      "seriesBelonging": "1ª série",
+      "urlImage": "https://livrofacil.vteximg.com.br/arquivos/ids/259621-1000-1000/9788534241649.jpg"
+    },
+    {
+      "id": "d3bca9c8-edc7-4c5b-9809-53efc9183e6a",
+      "matter": "Gramática e ortografia",
+      "seriesBelonging": "Alfabetização 1",
+      "urlImage": "https://m.media-amazon.com/images/I/81Ugh3VGVXS.jpg"
+    },
+    {
+      "id": "be5982e4-a81f-47a2-a702-0fc4ea7ba455",
+      "matter": "Integrado",
+      "seriesBelonging": "1ª série",
+      "urlImage": "https://a-static.mlcdn.com.br/800x560/livro-eu-gosto-mais-integrado-1o-ano-bncc/livrosnainternet/167698-167699/7fc0fb08959060653d13faeb2445fd5a.png"
+    },
+    {
+      "id": "91555e71-52ff-419a-aad1-80fdf6615952",
+      "matter": "Língua portuguesa",
+      "seriesBelonging": "1ª série",
+      "urlImage": "https://livrofacil.vteximg.com.br/arquivos/ids/259621-1000-1000/9788534241649.jpg"
+    },
+    {
+      "id": "177dd162-315f-4f27-8907-645d476e1dd9",
+      "matter": "Gramática e ortografia",
+      "seriesBelonging": "Alfabetização 1",
+      "urlImage": "https://m.media-amazon.com/images/I/81Ugh3VGVXS.jpg"
+    }
+  ],
   "notes": []
 }
