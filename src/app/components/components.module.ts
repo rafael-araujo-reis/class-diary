@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuTabsComponent } from './menu-tabs/menu-tabs.component';
+import { NgModule } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { ButtonComponent } from './button/button.component';
 
-// const components = [];
+const components = [ButtonComponent];
 @NgModule({
-  // declarations: [...components],
-  // imports: [CommonModule],
-  // exports: [...components],
+  declarations: [...components],
+  imports: [CommonModule, MatIconModule],
+  exports: [...components],
 })
 export class ComponentsModule {}

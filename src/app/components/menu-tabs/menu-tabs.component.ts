@@ -1,5 +1,5 @@
 import { MenuApplicationService } from './../../services/menu-application.service';
-import { IListMenu } from './../../interfaces/IListMenu.interface';
+import { IListMenu } from './../../interfaces/IMenu.interface';
 import { Component, OnInit } from '@angular/core';
 import { RouterNavigate } from 'src/app/shared/utils/router-navigate';
 @Component({
