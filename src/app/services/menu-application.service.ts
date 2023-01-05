@@ -1,4 +1,4 @@
-import { IListMenu } from './../interfaces/IListMenu.interface';
+import { IListMenu } from './../interfaces/IMenu.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, retry } from 'rxjs';
