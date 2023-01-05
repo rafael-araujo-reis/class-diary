@@ -1,16 +1,17 @@
-import { MenuTabsComponent } from './components/menu-tabs/menu-tabs.component';
-import { ComponentsModule } from './components/components.module';
-import { ViewsModule } from './views/views.module';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+
+import { ComponentsModule } from './components/components.module';
+import { MenuTabsComponent } from './components/menu-tabs/menu-tabs.component';
+import { ViewsModule } from './views/views.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
 
 const modules = [ComponentsModule, ViewsModule];
 const material = [MatIconModule];
@@ -32,7 +33,7 @@ const commons = [
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [...modules, material],
+  exports: [...modules, ...material],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
