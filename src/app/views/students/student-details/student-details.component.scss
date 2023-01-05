@@ -1,0 +1,81 @@
+@import "../../../../colors.scss";
+
+.container-student {
+  position: relative;
+
+  .header {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    left: 0;
+
+    .title {
+      position: absolute;
+      bottom: 0;
+      left: 2.4rem;
+
+      padding: 1.2rem 1.6rem;
+      border-radius: 0.8rem;
+
+      background: $white;
+      box-shadow: $shadow;
+
+      transform: translateY(50%);
+
+      font-size: 2rem;
+      color: $main;
+    }
+
+    .image {
+      height: 20rem;
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .back {
+      position: absolute;
+      top: 2.8rem;
+      left: 2.8rem;
+
+      color: $white;
+      // box-shadow: 2px 2px 10px red;
+      text-shadow: 2px 2px 10px black;
+
+      border: none;
+      background-color: transparent;
+
+      .icon {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .contente {
+    margin-top: 20rem;
+
+    .title-page {
+      margin-bottom: 2.4rem;
+    }
+
+    .linkedMaterialsEmpty {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+
+      .text {
+        color: $text;
+        font-size: 2rem;
+        text-align: center;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+  }
+}

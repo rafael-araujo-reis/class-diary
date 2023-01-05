@@ -9,6 +9,8 @@
   left: 0;
   right: 0;
 
+  z-index: 10;
+
   padding: 2.4rem;
 
   .image {
@@ -55,6 +57,7 @@
       margin-top: 0.8rem;
 
       .card {
+        position: relative;
         background: $white;
         border: 0.1rem solid $blue-light;
         border-radius: 0.8rem;
@@ -92,6 +95,20 @@
             color: $text;
             font-size: 1.2rem;
           }
+        }
+
+        .icon-arrow {
+          position: absolute;
+          display: flex;
+          align-items: center;
+
+          height: 100%;
+
+          top: 0;
+          bottom: 0;
+          right: 1.6rem;
+
+          color: $blue-light;
         }
       }
 
@@ -166,29 +183,6 @@
       gap: 2.4rem;
       max-width: 30rem;
       margin-inline: auto;
-
-      .button-empty {
-        color: $green;
-        border-color: $green;
-
-        padding: 2.4rem;
-      }
     }
-  }
-
-  .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    background: $white;
-
-    border: 0.1rem dashed $main;
-    border-radius: 0.8rem;
-    font-size: 1.6rem;
-    color: $main;
-
-    width: 100%;
-    padding: 1.2rem;
   }
 }

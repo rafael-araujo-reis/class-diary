@@ -1,15 +1,21 @@
-import { ListMaterialsService } from './../../services/list-materials.service';
-import { IListMaterials } from './../../interfaces/IListMaterials.interface';
-import { AfterViewChecked, Component, OnInit } from '@angular/core';
-import { IListStudents } from './../../interfaces/IListStudents.interface';
-import { ListStudentsService } from './../../services/list-students.service';
+import { RouterEnum } from './../../shared/constants/RouterEnum.enum';
+import { RouterNavigate } from './../../shared/utils/router-navigate';
+import { Component, OnInit } from '@angular/core';
+import { IListMaterials } from './../../interfaces/IMaterials.interface';
+import { IListStudents } from './../../interfaces/IStudents.interface';
+import { MaterialsService } from './../../services/materials.service';
+import { StudentsService } from './../../services/students.service';
 
 @Component({
   selector: 'app-area-teacher',
   templateUrl: './area-teacher.component.html',
   styleUrls: ['./area-teacher.component.scss'],
 })
-export class AreaTeacherComponent implements OnInit, AfterViewChecked {
+export class AreaTeacherComponent implements OnInit {
+  icon_add = 'add_circle_outline';
+  registre_student = 'cadastrar aluno';
+  registre_material = 'cadastrar material';
+
   titlePage = '';
 
   teacher = {
@@ -21,8 +27,9 @@ export class AreaTeacherComponent implements OnInit, AfterViewChecked {
   listStudents: IListStudents[] = [];
 
   constructor(
-    private studentsService: ListStudentsService,
-    private materialsService: ListMaterialsService
+    private studentsService: StudentsService,
+    private materialsService: MaterialsService,
+    private router: RouterNavigate
   ) {}
 
   ngOnInit(): void {
@@ -30,7 +37,7 @@ export class AreaTeacherComponent implements OnInit, AfterViewChecked {
     this.getListMaterials();
   }
 
-  ngAfterViewChecked() {
+  ngAfterContentChecked() {
     this.definitionTitlePage();
   }
 
@@ -60,5 +67,15 @@ export class AreaTeacherComponent implements OnInit, AfterViewChecked {
     return this.materialsService
       .getListMaterials()
       .subscribe((listMaterials) => (this.listMaterials = listMaterials));
+  }
+
+  viewDetailsStudent(event: any) {
+    const { id } = event.target;
+
+    if (id) {
+      this.router.navigatePath(RouterEnum.STUDENT_DETAILS, {
+        queryParams: { id: id },
+      });
+    }
   }
 }

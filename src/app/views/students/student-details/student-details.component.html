@@ -1,0 +1,40 @@
+<section *ngIf="student" class="container-student">
+  <header class="header">
+    <div
+      class="image"
+      [ngStyle]="{
+        'background-image': 'url(' + student.photoStudent + ')'
+      }"
+    ></div>
+    <h1 class="title">
+      {{ student.nameStudent.name }} {{ student.nameStudent.surname }}
+    </h1>
+
+    <button class="back" (click)="goToBack()">
+      <mat-icon class="icon">arrow_back</mat-icon>
+    </button>
+  </header>
+
+  <div class="contente">
+    <h2 class="title-page">Materiais vinculados</h2>
+
+    <div class="linkedMaterialsEmpty" *ngIf="!student.linkedMaterials.length">
+      <p class="text">Aluno sem nenhum material vinculado no momento</p>
+      <button class="button button-empty">
+        <mat-icon>add_circle_outline</mat-icon>
+        vincular material
+      </button>
+    </div>
+
+    <div class="buttons" *ngIf="student.linkedMaterials.length">
+      <button class="button">
+        <mat-icon>add_circle_outline</mat-icon>
+        vincular material
+      </button>
+      <button class="button">
+        <mat-icon>add_circle_outline</mat-icon>
+        adicionar anotação no diário
+      </button>
+    </div>
+  </div>
+</section>
