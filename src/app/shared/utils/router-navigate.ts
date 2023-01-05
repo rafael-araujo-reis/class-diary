@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 export class RouterNavigate {
   constructor(private router: Router) {}
 
-  navigatePath(path: string): void {
-    this.router.navigate([path]);
+  navigatePath(path: string, props?: {}): void {
+    this.router.navigate([path], props);
   }
 }
