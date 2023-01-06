@@ -38,7 +38,17 @@
       },
       "photoStudent": "https://img.freepik.com/fotos-gratis/crianca-de-tiro-medio-estudando-em-casa_23-2148888832.jpg?w=996&t=st=1672740101~exp=1672740701~hmac=728e304b6904f626167c5da0591e27b5ef5fadac7eb8593cfce0e24ec55a0c16",
       "studySeries": "1ª série",
-      "linkedMaterials": []
+      "linkedMaterials": [
+        {
+          "id": "b624d356-6875-4803-a939-281182f35d70"
+        },
+        {
+          "id": "be5982e4-a81f-47a2-a702-0fc4ea7ba455"
+        },
+        {
+          "id": "91555e71-52ff-419a-aad1-80fdf6615952"
+        }
+      ]
     },
     {
       "id": "52bce03d-d247-426f-a643-a3d9bf93165b",
@@ -48,7 +58,14 @@
       },
       "photoStudent": "https://img.freepik.com/fotos-gratis/garoto-observando-ou-estudando-modelo-de-globo-educacional-na-sala-de-aula_1150-3832.jpg?w=996&t=st=1672741971~exp=1672742571~hmac=ad5ecde7a0be8b9cf7a94bf97f703fccf42308cffc6310386d8c4bd45be708ff",
       "studySeries": "Educação infantil 1",
-      "linkedMaterials": []
+      "linkedMaterials": [
+        {
+          "id": "d3bca9c8-edc7-4c5b-9809-53efc9183e6a"
+        },
+        {
+          "id": "177dd162-315f-4f27-8907-645d476e1dd9"
+        }
+      ]
     }
   ],
   "materials": [
