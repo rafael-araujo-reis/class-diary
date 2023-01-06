@@ -1,0 +1,16 @@
+@use "three-dots" with (
+  // $dot-width: 16px,
+  // $dot-height: 16px,
+  // $dot-radius: 16px/2,
+  // $dot-spacing: 16px + 16px/2,
+  $dot-color: #133a7c
+);
+
+@import "../../../colors.scss";
+.container-loader {
+  padding: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
