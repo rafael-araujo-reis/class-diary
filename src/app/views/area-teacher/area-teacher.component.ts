@@ -18,6 +18,8 @@ export class AreaTeacherComponent implements OnInit {
 
   titlePage = '';
 
+  loading: boolean = true;
+
   teacher = {
     name: 'Danielle Cristina',
     surname: 'da Silva Reis',
@@ -60,13 +62,23 @@ export class AreaTeacherComponent implements OnInit {
   getListStudents() {
     return this.studentsService
       .getListStudents()
-      .subscribe((listStudents) => (this.listStudents = listStudents));
+      .subscribe((listStudents) => this.updateListStudents(listStudents));
+  }
+
+  private updateListStudents(listStudents: IListStudents[]) {
+    this.listStudents = listStudents;
+    this.loading = false;
   }
 
   getListSchoolSubject() {
     return this.SchoolSubjectService.getListSchoolSubject().subscribe(
-      (listSchoolSubject) => (this.listSchoolSubject = listSchoolSubject)
+      (listSchoolSubject) => this.updateListSchoolSubject(listSchoolSubject)
     );
+  }
+
+  private updateListSchoolSubject(listSchoolSubject: IListSchoolSubject[]) {
+    this.listSchoolSubject = listSchoolSubject;
+    this.loading = false;
   }
 
   viewDetailsStudent(event: any) {

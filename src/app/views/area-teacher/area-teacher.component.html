@@ -10,7 +10,7 @@
     </button>
   </header>
 
-  <div class="contente">
+  <div class="contente" *ngIf="!loading">
     <div class="listStudents" *ngIf="listStudents.length">
       <h2 class="title-page">Alunos</h2>
       <ul class="cards">
@@ -87,3 +87,7 @@
     </div>
   </div>
 </section>
+
+<div class="loading" *ngIf="loading">
+  <app-loading></app-loading>
+</div>

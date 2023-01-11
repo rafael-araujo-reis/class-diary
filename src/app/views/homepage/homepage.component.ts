@@ -38,7 +38,7 @@ export class HomepageComponent implements OnInit {
   }
 
   private updateListStudents(listStudents: IListStudents[]) {
-    this.loading = false;
     this.listStudents = listStudents;
+    this.loading = false;
   }
 }
