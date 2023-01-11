@@ -20,10 +20,7 @@ export class HomepageComponent implements OnInit {
   getListStudents() {
     return this.studentsService
       .getListStudents()
-      .subscribe(
-        (listStudents: IListStudents[]): IListStudents[] =>
-          (this.listStudents = listStudents)
-      );
+      .subscribe((listStudents) => this.updateListStudents(listStudents));
   }
 
   viewDetailsStudent(event: any) {
@@ -38,5 +35,10 @@ export class HomepageComponent implements OnInit {
     return this.studentsService
       .getDetailsStudentById(id)
       .subscribe((data) => console.log(data));
+  }
+
+  private updateListStudents(listStudents: IListStudents[]) {
+    this.loading = false;
+    this.listStudents = listStudents;
   }
 }
