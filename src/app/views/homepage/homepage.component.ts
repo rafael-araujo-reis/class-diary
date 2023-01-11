@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
   listStudents: IListStudents[] = [];
-  loader = false;
+  loading = true;
 
   constructor(private studentsService: StudentsService) {}
 

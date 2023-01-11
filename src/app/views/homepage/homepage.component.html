@@ -5,7 +5,7 @@
     lugar
   </p>
 
-  <div *ngIf="!loader">
+  <div *ngIf="!loading">
     <h2 class="title-home">Escolha um aluno</h2>
     <div class="container-students">
       <div class="card" *ngFor="let student of listStudents">
@@ -26,4 +26,4 @@
   </div>
 </section>
 
-<app-loader *ngIf="loader"></app-loader>
+<app-loading *ngIf="loading"></app-loading>
