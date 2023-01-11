@@ -1,9 +1,9 @@
 import { RouterEnum } from './../../shared/constants/RouterEnum.enum';
 import { RouterNavigate } from './../../shared/utils/router-navigate';
 import { Component, OnInit } from '@angular/core';
-import { IListMaterials } from './../../interfaces/IMaterials.interface';
+import { IListSchoolSubject } from './../../interfaces/IMaterials.interface';
 import { IListStudents } from './../../interfaces/IStudents.interface';
-import { MaterialsService } from './../../services/materials.service';
+import { SchoolSubjectService } from './../../services/school-subject.service';
 import { StudentsService } from './../../services/students.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { StudentsService } from './../../services/students.service';
 export class AreaTeacherComponent implements OnInit {
   icon_add = 'add_circle_outline';
   registre_student = 'cadastrar aluno';
-  registre_material = 'cadastrar material';
+  registre_scholl_subject = 'cadastrar matéria';
 
   titlePage = '';
 
@@ -23,18 +23,18 @@ export class AreaTeacherComponent implements OnInit {
     surname: 'da Silva Reis',
   };
 
-  listMaterials: IListMaterials[] = [];
+  listSchoolSubject: IListSchoolSubject[] = [];
   listStudents: IListStudents[] = [];
 
   constructor(
     private studentsService: StudentsService,
-    private materialsService: MaterialsService,
+    private SchoolSubjectService: SchoolSubjectService,
     private router: RouterNavigate
   ) {}
 
   ngOnInit(): void {
     this.getListStudents();
-    this.getListMaterials();
+    this.getListSchoolSubject();
   }
 
   ngAfterContentChecked() {
@@ -42,7 +42,7 @@ export class AreaTeacherComponent implements OnInit {
   }
 
   definitionTitlePage() {
-    const listSizeMaterial = this.listMaterials.length;
+    const listSizeMaterial = this.listSchoolSubject.length;
     const listSizeStudents = this.listStudents.length;
 
     let definition = '';
@@ -52,7 +52,7 @@ export class AreaTeacherComponent implements OnInit {
     } else if (listSizeMaterial > 0 && listSizeStudents === 0) {
       definition = 'alunos';
     } else if (listSizeMaterial === 0 && listSizeStudents > 0) {
-      definition = 'materiais';
+      definition = 'matérias';
     }
     this.titlePage = `Sua lista de ${definition} está vazia`;
   }
@@ -63,10 +63,10 @@ export class AreaTeacherComponent implements OnInit {
       .subscribe((listStudents) => (this.listStudents = listStudents));
   }
 
-  getListMaterials() {
-    return this.materialsService
-      .getListMaterials()
-      .subscribe((listMaterials) => (this.listMaterials = listMaterials));
+  getListSchoolSubject() {
+    return this.SchoolSubjectService.getListSchoolSubject().subscribe(
+      (listSchoolSubject) => (this.listSchoolSubject = listSchoolSubject)
+    );
   }
 
   viewDetailsStudent(event: any) {

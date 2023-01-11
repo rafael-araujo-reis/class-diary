@@ -1,4 +1,4 @@
-export interface IListMaterials {
+export interface IListSchoolSubject {
   id: string;
   urlImage: string;
   matter: string;

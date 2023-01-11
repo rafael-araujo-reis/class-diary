@@ -41,43 +41,43 @@
       </ul>
     </div>
 
-    <div class="listMaterials" *ngIf="listMaterials.length">
-      <h2 class="title-page">Materiais</h2>
+    <div class="listSchoolSubject" *ngIf="listSchoolSubject.length">
+      <h2 class="title-page">Matérias</h2>
 
       <div class="container-materials">
         <div
           class="card"
-          *ngFor="let material of listMaterials"
-          [id]="material.id"
+          *ngFor="let schoolSubject of listSchoolSubject"
+          [id]="schoolSubject.id"
         >
           <div
             class="image"
             [ngStyle]="{
-              'background-image': 'url(' + material.urlImage + ')'
+              'background-image': 'url(' + schoolSubject.urlImage + ')'
             }"
           ></div>
           <div class="description-card">
-            <p class="title">{{ material.matter }}</p>
-            <span class="subtitle">{{ material.seriesBelonging }}</span>
+            <p class="title">{{ schoolSubject.matter }}</p>
+            <span class="subtitle">{{ schoolSubject.seriesBelonging }}</span>
           </div>
         </div>
       </div>
 
       <button class="button">
         <mat-icon>{{ icon_add }}</mat-icon>
-        {{ registre_material }}
+        {{ registre_scholl_subject }}
       </button>
     </div>
 
     <div
       class="emptyLists"
-      *ngIf="!listStudents.length || !listMaterials.length"
+      *ngIf="!listStudents.length || !listSchoolSubject.length"
     >
       <h2 class="title-page">{{ titlePage }}</h2>
       <div class="buttons">
-        <button class="button button-empty" *ngIf="!listMaterials.length">
+        <button class="button button-empty" *ngIf="!listSchoolSubject.length">
           <mat-icon>{{ icon_add }}</mat-icon>
-          {{ registre_material }}
+          {{ registre_scholl_subject }}
         </button>
         <button class="button button-empty" *ngIf="!listStudents.length">
           <mat-icon>{{ icon_add }}</mat-icon>

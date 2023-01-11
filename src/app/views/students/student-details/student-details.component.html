@@ -16,20 +16,23 @@
   </header>
 
   <div class="contente">
-    <h2 class="title-page">Materiais vinculados</h2>
+    <h2 class="title-page">Matérias vinculados</h2>
 
-    <div class="linkedMaterialsEmpty" *ngIf="!student.linkedMaterials.length">
-      <p class="text">Aluno sem nenhum material vinculado no momento</p>
+    <div
+      class="linkedSchoolSubjectsEmpty"
+      *ngIf="!student.linkedSchoolSubjects.length"
+    >
+      <p class="text">Aluno sem nenhuma matéria vinculada no momento</p>
       <button class="button button-empty">
         <mat-icon>add_circle_outline</mat-icon>
-        vincular material
+        vincular matéria
       </button>
     </div>
 
-    <div class="buttons" *ngIf="student.linkedMaterials.length">
+    <div class="buttons" *ngIf="student.linkedSchoolSubjects.length">
       <button class="button">
         <mat-icon>add_circle_outline</mat-icon>
-        vincular material
+        vincular matéria
       </button>
       <button class="button">
         <mat-icon>add_circle_outline</mat-icon>

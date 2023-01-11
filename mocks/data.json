@@ -28,7 +28,7 @@
       },
       "photoStudent": "https://img.freepik.com/fotos-premium/menino-sorridente-de-alto-angulo-com-oculos-estudando_23-2148355253.jpg?w=996",
       "studySeries": "3ª série",
-      "linkedMaterials": []
+      "linkedSchoolSubjects": []
     },
     {
       "id": "2afb9577-b0ad-4d7e-9537-7bb1d88a0d16",
@@ -38,7 +38,7 @@
       },
       "photoStudent": "https://img.freepik.com/fotos-gratis/crianca-de-tiro-medio-estudando-em-casa_23-2148888832.jpg?w=996&t=st=1672740101~exp=1672740701~hmac=728e304b6904f626167c5da0591e27b5ef5fadac7eb8593cfce0e24ec55a0c16",
       "studySeries": "1ª série",
-      "linkedMaterials": [
+      "linkedSchoolSubjects": [
         {
           "id": "b624d356-6875-4803-a939-281182f35d70"
         },
@@ -58,7 +58,7 @@
       },
       "photoStudent": "https://img.freepik.com/fotos-gratis/garoto-observando-ou-estudando-modelo-de-globo-educacional-na-sala-de-aula_1150-3832.jpg?w=996&t=st=1672741971~exp=1672742571~hmac=ad5ecde7a0be8b9cf7a94bf97f703fccf42308cffc6310386d8c4bd45be708ff",
       "studySeries": "Educação infantil 1",
-      "linkedMaterials": [
+      "linkedSchoolSubjects": [
         {
           "id": "d3bca9c8-edc7-4c5b-9809-53efc9183e6a"
         },
@@ -73,49 +73,49 @@
       "id": "9d3ce8f3-f2c2-4024-a148-4b453a25e172",
       "matter": "Matemática",
       "seriesBelonging": "1ª série",
-      "urlImage": "https://m.media-amazon.com/images/I/81Oo34IL1IL.jpg"
+      "urlImage": "https://v5j9q4b5.rocketcdn.me/wp-content/uploads/2022/06/20-fatos-legais-e-divertidos-sobre-matematica-e1654302576479-960x600.jpg"
     },
     {
       "id": "85f7d379-7ad3-42ba-a869-2ccc1f77444e",
-      "matter": "História",
+      "matter": "Ciências",
       "seriesBelonging": "2ª série",
-      "urlImage": "https://a-static.mlcdn.com.br/1500x1500/livro-eu-gosto-mais-historia-2o-ano/livrosnainternet/167003-167007/a50c138c7f6c1bbb54f0fd3c115fed57.jpg"
+      "urlImage": "https://unifesspa.edu.br/images/conteudo/2019/Feira_de_Ci%C3%AAncias.png"
     },
     {
       "id": "8504f908-077f-4c64-add4-97b45f9cde96",
-      "matter": "Integrado",
+      "matter": "Inglês",
       "seriesBelonging": "1ª série",
-      "urlImage": "https://a-static.mlcdn.com.br/800x560/livro-eu-gosto-mais-integrado-1o-ano-bncc/livrosnainternet/167698-167699/7fc0fb08959060653d13faeb2445fd5a.png"
+      "urlImage": "https://cdn.wizard.com.br/wp-content/uploads/2020/06/03192344/palavras-em-ingles-britanico-e-ingles-americano-wizard.jpg"
     },
     {
       "id": "b624d356-6875-4803-a939-281182f35d70",
       "matter": "Língua portuguesa",
       "seriesBelonging": "1ª série",
-      "urlImage": "https://livrofacil.vteximg.com.br/arquivos/ids/259621-1000-1000/9788534241649.jpg"
+      "urlImage": "https://www.fundacaotelefonicavivo.org.br/wp-content/uploads/2021/05/lingua-portuguesa-1200px-materia.jpg"
     },
     {
       "id": "d3bca9c8-edc7-4c5b-9809-53efc9183e6a",
       "matter": "Gramática e ortografia",
       "seriesBelonging": "Alfabetização 1",
-      "urlImage": "https://m.media-amazon.com/images/I/81Ugh3VGVXS.jpg"
+      "urlImage": "https://blog.educalar.com.br/wp-content/uploads/2017/10/gram%C3%A1tica-1.png"
     },
     {
       "id": "be5982e4-a81f-47a2-a702-0fc4ea7ba455",
-      "matter": "Integrado",
+      "matter": "Geografia",
       "seriesBelonging": "1ª série",
-      "urlImage": "https://a-static.mlcdn.com.br/800x560/livro-eu-gosto-mais-integrado-1o-ano-bncc/livrosnainternet/167698-167699/7fc0fb08959060653d13faeb2445fd5a.png"
+      "urlImage": "https://s1.static.brasilescola.uol.com.br/be/conteudo/images/geografia.jpeg"
     },
     {
       "id": "91555e71-52ff-419a-aad1-80fdf6615952",
-      "matter": "Língua portuguesa",
+      "matter": "História",
       "seriesBelonging": "1ª série",
-      "urlImage": "https://livrofacil.vteximg.com.br/arquivos/ids/259621-1000-1000/9788534241649.jpg"
+      "urlImage": "https://www.unisuam.edu.br/wp-content/uploads/2021/08/historia_e_geografia.png"
     },
     {
       "id": "177dd162-315f-4f27-8907-645d476e1dd9",
-      "matter": "Gramática e ortografia",
+      "matter": "Espanhol",
       "seriesBelonging": "Alfabetização 1",
-      "urlImage": "https://m.media-amazon.com/images/I/81Ugh3VGVXS.jpg"
+      "urlImage": "https://www.estudopratico.com.br/wp-content/uploads/2017/03/lingua-espanhola-1200x675.jpg"
     }
   ],
   "notes": []

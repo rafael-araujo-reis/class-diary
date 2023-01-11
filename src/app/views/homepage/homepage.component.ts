@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
   listStudents: IListStudents[] = [];
-  loader = true;
+  loader = false;
 
   constructor(private studentsService: StudentsService) {}
 
@@ -20,7 +20,10 @@ export class HomepageComponent implements OnInit {
   getListStudents() {
     return this.studentsService
       .getListStudents()
-      .subscribe((listStudents) => (this.listStudents = listStudents));
+      .subscribe(
+        (listStudents: IListStudents[]): IListStudents[] =>
+          (this.listStudents = listStudents)
+      );
   }
 
   viewDetailsStudent(event: any) {

@@ -6,5 +6,5 @@ export interface IListStudents {
   };
   photoStudent: string;
   studySeries: string;
-  linkedMaterials: [];
+  linkedSchoolSubjects: [];
 }
