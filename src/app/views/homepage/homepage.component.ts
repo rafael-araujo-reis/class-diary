@@ -1,3 +1,5 @@
+import { RouterNavigate } from './../../shared/utils/router-navigate';
+import { RouterEnum } from './../../shared/constants/RouterEnum.enum';
 import { IListStudents } from './../../interfaces/IStudents.interface';
 import { StudentsService } from './../../services/students.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +13,10 @@ export class HomepageComponent implements OnInit {
   listStudents: IListStudents[] = [];
   loading = true;
 
-  constructor(private studentsService: StudentsService) {}
+  constructor(
+    private studentsService: StudentsService,
+    private router: RouterNavigate
+  ) {}
 
   ngOnInit(): void {
     this.getListStudents();
@@ -23,19 +28,21 @@ export class HomepageComponent implements OnInit {
       .subscribe((listStudents) => this.updateListStudents(listStudents));
   }
 
-  viewDetailsStudent(event: any) {
+  viewNotesStudent(event: any) {
     const { id } = event.target;
 
     if (id) {
-      this.getDetailsStudentById(id);
+      this.router.navigatePath(RouterEnum.NOTES_STUDENT, {
+        queryParams: { id: id },
+      });
     }
   }
 
-  getDetailsStudentById(id: string) {
-    return this.studentsService
-      .getDetailsStudentById(id)
-      .subscribe((data) => console.log(data));
-  }
+  // getDetailsStudentById(id: string) {
+  //   return this.studentsService
+  //     .getDetailsStudentById(id)
+  //     .subscribe((data) => console.log(data));
+  // }
 
   private updateListStudents(listStudents: IListStudents[]) {
     this.listStudents = listStudents;

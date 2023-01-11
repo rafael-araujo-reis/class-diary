@@ -1,3 +1,4 @@
+import { NotesStudentComponent } from './views/notes/notes-student/notes-student.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RouterEnum } from './shared/constants/RouterEnum.enum';
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: RouterEnum.STUDENT_DETAILS,
     component: StudentDetailsComponent,
+  },
+  {
+    path: RouterEnum.NOTES_STUDENT,
+    component: NotesStudentComponent,
   },
   {
     path: '**',
