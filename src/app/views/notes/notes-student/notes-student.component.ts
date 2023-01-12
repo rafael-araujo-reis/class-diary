@@ -1,3 +1,5 @@
+import { INote } from './../../../interfaces/INote.interface';
+import { NotesService } from './../../../services/notes.service';
 import { IListStudents } from './../../../interfaces/IStudents.interface';
 import { StudentsService } from './../../../services/students.service';
 import { ActivatedRoute } from '@angular/router';
@@ -12,21 +14,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotesStudentComponent implements OnInit {
   student: IListStudents | undefined;
-  id: string = '';
+  idStudent: string = '';
   loading: boolean = true;
+  listNotesStudent: INote[] = [];
 
   constructor(
     private router: RouterNavigate,
     private routeActive: ActivatedRoute,
-    private studentsService: StudentsService
+    private studentsService: StudentsService,
+    private note: NotesService
   ) {}
 
   ngOnInit(): void {
     this.routeActive.queryParams.subscribe((params) => {
-      this.id = params['id'] || '';
+      this.idStudent = params['id'] || '';
     });
 
-    this.getDetailsStudentById(this.id);
+    this.getDetailsStudentById(this.idStudent);
+    this.searchNotesStudents(this.idStudent);
   }
 
   goToHomeDiary() {
@@ -40,13 +45,22 @@ export class NotesStudentComponent implements OnInit {
         this.updateDetailsStudent(student)
       );
   }
+
   updateDetailsStudent(student: IListStudents) {
     this.student = student;
     this.loading = false;
     console.log(this.student);
   }
 
-  // get searchNotesStudents(id: string){
-  //   return this.notesServices
-  // }
+  searchNotesStudents(idStudent: string) {
+    return this.note
+      .getListNotesStudentByIdStudent(idStudent)
+      .subscribe((notes: INote[]) => this.updateNotesStudent(notes));
+  }
+
+  private updateNotesStudent(notes: INote[]) {
+    this.listNotesStudent = notes.filter(
+      (note: INote) => note.idStudent === this.idStudent
+    );
+  }
 }

@@ -19,51 +19,11 @@
     <h2 class="title-page">Anotações das atividades</h2>
 
     <div class="cards">
-      <div class="card">
-        <p class="title-note">Números romanos</p>
+      <div class="card" *ngFor="let note of listNotesStudent">
+        <p class="title-note">{{ note.activitySubject }}</p>
         <span class="date-note">
           <mat-icon class="icon-date">event</mat-icon>
-          24/02/23
-        </span>
-        <mat-icon class="icon-arrow">arrow_forward_ios</mat-icon>
-      </div>
-      <div class="card">
-        <p class="title-note">Números romanos</p>
-        <span class="date-note">
-          <mat-icon class="icon-date">event</mat-icon>
-          24/02/23
-        </span>
-        <mat-icon class="icon-arrow">arrow_forward_ios</mat-icon>
-      </div>
-      <div class="card">
-        <p class="title-note">Números romanos</p>
-        <span class="date-note">
-          <mat-icon class="icon-date">event</mat-icon>
-          24/02/23
-        </span>
-        <mat-icon class="icon-arrow">arrow_forward_ios</mat-icon>
-      </div>
-      <div class="card">
-        <p class="title-note">Números romanos</p>
-        <span class="date-note">
-          <mat-icon class="icon-date">event</mat-icon>
-          24/02/23
-        </span>
-        <mat-icon class="icon-arrow">arrow_forward_ios</mat-icon>
-      </div>
-      <div class="card">
-        <p class="title-note">Números romanos</p>
-        <span class="date-note">
-          <mat-icon class="icon-date">event</mat-icon>
-          24/02/23
-        </span>
-        <mat-icon class="icon-arrow">arrow_forward_ios</mat-icon>
-      </div>
-      <div class="card">
-        <p class="title-note">Números romanos</p>
-        <span class="date-note">
-          <mat-icon class="icon-date">event</mat-icon>
-          24/02/23
+          {{ note.activityDate | date : "dd/MM/yy" }}
         </span>
         <mat-icon class="icon-arrow">arrow_forward_ios</mat-icon>
       </div>
