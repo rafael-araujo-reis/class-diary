@@ -1,1 +1,73 @@
-<p>notes-student works!</p>
+<section *ngIf="!loading && student" class="container-notes">
+  <header class="header">
+    <div
+      class="image"
+      [ngStyle]="{
+        'background-image': 'url(' + student.photoStudent + ')'
+      }"
+    ></div>
+    <h1 class="title">
+      {{ student.nameStudent.name }} {{ student.nameStudent.surname }}
+    </h1>
+
+    <button class="back" (click)="goToHomeDiary()">
+      <mat-icon class="icon">arrow_back</mat-icon>
+    </button>
+  </header>
+
+  <div class="contente">
+    <h2 class="title-page">Anotações das atividades</h2>
+
+    <div class="cards">
+      <div class="card">
+        <p class="title-note">Números romanos</p>
+        <span class="date-note">
+          <mat-icon class="icon-date">event</mat-icon>
+          24/02/23
+        </span>
+        <mat-icon class="icon-arrow">arrow_forward_ios</mat-icon>
+      </div>
+      <div class="card">
+        <p class="title-note">Números romanos</p>
+        <span class="date-note">
+          <mat-icon class="icon-date">event</mat-icon>
+          24/02/23
+        </span>
+        <mat-icon class="icon-arrow">arrow_forward_ios</mat-icon>
+      </div>
+      <div class="card">
+        <p class="title-note">Números romanos</p>
+        <span class="date-note">
+          <mat-icon class="icon-date">event</mat-icon>
+          24/02/23
+        </span>
+        <mat-icon class="icon-arrow">arrow_forward_ios</mat-icon>
+      </div>
+      <div class="card">
+        <p class="title-note">Números romanos</p>
+        <span class="date-note">
+          <mat-icon class="icon-date">event</mat-icon>
+          24/02/23
+        </span>
+        <mat-icon class="icon-arrow">arrow_forward_ios</mat-icon>
+      </div>
+      <div class="card">
+        <p class="title-note">Números romanos</p>
+        <span class="date-note">
+          <mat-icon class="icon-date">event</mat-icon>
+          24/02/23
+        </span>
+        <mat-icon class="icon-arrow">arrow_forward_ios</mat-icon>
+      </div>
+      <div class="card">
+        <p class="title-note">Números romanos</p>
+        <span class="date-note">
+          <mat-icon class="icon-date">event</mat-icon>
+          24/02/23
+        </span>
+        <mat-icon class="icon-arrow">arrow_forward_ios</mat-icon>
+      </div>
+    </div>
+  </div>
+</section>
+<app-loading *ngIf="loading"></app-loading>
