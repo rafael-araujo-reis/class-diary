@@ -34,7 +34,7 @@ export class StudentDetailsComponent implements OnInit {
       .subscribe((student: IListStudents) => (this.student = student));
   }
 
-  goToBack() {
+  goToAreaTeacher() {
     this.router.navigatePath(RouterEnum.AREA_TEACHERT);
   }
 }
