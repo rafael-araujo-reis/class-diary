@@ -1,3 +1,4 @@
+import { NoteDetailsComponent } from './views/notes/note-details/note-details.component';
 import { NotesStudentComponent } from './views/notes/notes-student/notes-student.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: RouterEnum.NOTES_STUDENT,
     component: NotesStudentComponent,
+  },
+  {
+    path: RouterEnum.NOTE_DETAILS,
+    component: NoteDetailsComponent,
   },
   {
     path: '**',

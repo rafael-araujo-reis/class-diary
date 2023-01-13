@@ -1,0 +1,17 @@
+<section *ngIf="student" class="container-notes">
+  <header class="header">
+    <div
+      class="image"
+      [ngStyle]="{
+        'background-image': 'url(' + student.photoStudent + ')'
+      }"
+    ></div>
+    <h1 class="title">
+      {{ student.nameStudent.name }} {{ student.nameStudent.surname }}
+    </h1>
+
+    <button class="back" (click)="goToNotesStudent()">
+      <mat-icon class="icon">arrow_back</mat-icon>
+    </button>
+  </header>
+</section>

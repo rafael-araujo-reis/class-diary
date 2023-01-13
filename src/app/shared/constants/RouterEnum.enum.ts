@@ -3,4 +3,5 @@ export enum RouterEnum {
   AREA_TEACHERT = 'area-teacher',
   STUDENT_DETAILS = 'student-details',
   NOTES_STUDENT = 'notes-student',
+  NOTE_DETAILS = 'note-details',
 }
