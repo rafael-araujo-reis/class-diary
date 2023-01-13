@@ -1,6 +1,6 @@
 export interface INote {
+  id: string;
   idStudent: string;
-  idNote: string;
   idSchoolSubject: string;
   activityDate: Date;
   activitySubject: string;
