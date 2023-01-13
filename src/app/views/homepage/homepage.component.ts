@@ -1,6 +1,6 @@
 import { RouterNavigate } from './../../shared/utils/router-navigate';
 import { RouterEnum } from './../../shared/constants/RouterEnum.enum';
-import { IListStudents } from './../../interfaces/IStudents.interface';
+import { IStudent } from './../../interfaces/IStudent.interface';
 import { StudentsService } from './../../services/students.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.scss'],
 })
 export class HomepageComponent implements OnInit {
-  listStudents: IListStudents[] = [];
+  listStudents: IStudent[] = [];
   loading = true;
 
   constructor(
@@ -28,7 +28,7 @@ export class HomepageComponent implements OnInit {
       .subscribe((listStudents) => this.updateListStudents(listStudents));
   }
 
-  viewNotesStudent(event: any) {
+  viewAnnotationsStudent(event: any) {
     const { id } = event.target;
 
     if (id) {
@@ -38,13 +38,7 @@ export class HomepageComponent implements OnInit {
     }
   }
 
-  // getDetailsStudentById(id: string) {
-  //   return this.studentsService
-  //     .getDetailsStudentById(id)
-  //     .subscribe((data) => console.log(data));
-  // }
-
-  private updateListStudents(listStudents: IListStudents[]) {
+  private updateListStudents(listStudents: IStudent[]) {
     this.listStudents = listStudents;
     this.loading = false;
   }

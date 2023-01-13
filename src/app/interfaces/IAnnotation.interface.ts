@@ -1,4 +1,4 @@
-export interface INote {
+export interface IAnnotation {
   id: string;
   idStudent: string;
   idSchoolSubject: string;

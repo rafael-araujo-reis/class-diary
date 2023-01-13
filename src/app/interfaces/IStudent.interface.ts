@@ -1,4 +1,4 @@
-export interface IListStudents {
+export interface IStudent {
   id: string;
   nameStudent: {
     name: string;

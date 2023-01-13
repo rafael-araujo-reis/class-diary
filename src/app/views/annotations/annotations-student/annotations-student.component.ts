@@ -1,6 +1,6 @@
-import { INote } from './../../../interfaces/INote.interface';
-import { NotesService } from './../../../services/notes.service';
-import { IListStudent } from './../../../interfaces/IStudents.interface';
+import { IAnnotation } from './../../../interfaces/IAnnotation.interface';
+import { AnnotationsService } from './../../../services/annotations.service';
+import { IStudent } from './../../../interfaces/IStudent.interface';
 import { StudentsService } from './../../../services/students.service';
 import { ActivatedRoute } from '@angular/router';
 import { RouterNavigate } from './../../../shared/utils/router-navigate';
@@ -8,21 +8,21 @@ import { RouterEnum } from './../../../shared/constants/RouterEnum.enum';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-notes-student',
-  templateUrl: './notes-student.component.html',
-  styleUrls: ['./notes-student.component.scss'],
+  selector: 'app-annotations-student',
+  templateUrl: './annotations-student.component.html',
+  styleUrls: ['./annotations-student.component.scss'],
 })
-export class NotesStudentComponent implements OnInit {
-  student: IListStudent | undefined;
+export class AnnotationsStudentComponent implements OnInit {
+  student: IStudent | undefined;
   idStudent: string = '';
   loading: boolean = true;
-  listNotesStudent: INote[] = [];
+  listAnnotationsStudent: IAnnotation[] = [];
 
   constructor(
     private router: RouterNavigate,
     private routeActive: ActivatedRoute,
     private studentsService: StudentsService,
-    private note: NotesService
+    private annotation: AnnotationsService
   ) {}
 
   ngOnInit(): void {
@@ -31,7 +31,7 @@ export class NotesStudentComponent implements OnInit {
     });
 
     this.getDetailsStudentById(this.idStudent);
-    this.searchNotesStudents();
+    this.searchAnnotationsStudents();
   }
 
   goToHomeDiary() {
@@ -41,21 +41,21 @@ export class NotesStudentComponent implements OnInit {
   getDetailsStudentById(id: string) {
     return this.studentsService
       .getDetailsStudentById(id)
-      .subscribe((student: IListStudent) => this.updateDetailsStudent(student));
+      .subscribe((student: IStudent) => this.updateDetailsStudent(student));
   }
 
-  updateDetailsStudent(student: IListStudent) {
+  updateDetailsStudent(student: IStudent) {
     this.student = student;
     this.loading = false;
   }
 
-  searchNotesStudents() {
-    return this.note.listNotes.subscribe((notes: INote[]) =>
-      this.updateNotesStudent(notes)
+  searchAnnotationsStudents() {
+    return this.annotation.listAnnotations.subscribe(
+      (annotations: IAnnotation[]) => this.updateAnnotationsStudent(annotations)
     );
   }
 
-  viewDetailsNote(event: any) {
+  viewDetailsAnnotation(event: any) {
     const { id } = event.target;
 
     if (id) {
@@ -65,9 +65,9 @@ export class NotesStudentComponent implements OnInit {
     }
   }
 
-  private updateNotesStudent(notes: INote[]) {
-    this.listNotesStudent = notes.filter(
-      (note: INote) => note.idStudent === this.idStudent
+  private updateAnnotationsStudent(annotations: IAnnotation[]) {
+    this.listAnnotationsStudent = annotations.filter(
+      (annotation: IAnnotation) => annotation.idStudent === this.idStudent
     );
   }
 }

@@ -7,16 +7,16 @@ import { AreaTeacherComponent } from './area-teacher/area-teacher.component';
 import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { StudentDetailsComponent } from './students/student-details/student-details.component';
-import { NotesStudentComponent } from './notes/notes-student/notes-student.component';
-import { NoteDetailsComponent } from './notes/note-details/note-details.component';
+import { AnnotationsStudentComponent } from './annotations/annotations-student/annotations-student.component';
+import { AnnotationDetailsComponent } from './annotations/annotation-details/annotation-details.component';
 @NgModule({
   declarations: [
     HomepageComponent,
     PageNotFoundComponent,
     AreaTeacherComponent,
     StudentDetailsComponent,
-    NotesStudentComponent,
-    NoteDetailsComponent,
+    AnnotationsStudentComponent,
+    AnnotationDetailsComponent,
   ],
   imports: [CommonModule, MatIconModule, ComponentsModule],
 })

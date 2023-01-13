@@ -1,4 +1,4 @@
-<section *ngIf="!loading && student" class="container-notes">
+<section *ngIf="!loading && student" class="container-annotations">
   <header class="header">
     <div
       class="image"
@@ -21,19 +21,19 @@
     <div class="cards">
       <div
         class="card"
-        *ngFor="let note of listNotesStudent"
-        [id]="note.id"
-        (click)="viewDetailsNote($event)"
+        *ngFor="let annotation of listAnnotationsStudent"
+        [id]="annotation.id"
+        (click)="viewDetailsAnnotation($event)"
       >
-        <p class="title-note">{{ note.activitySubject }}</p>
-        <span class="date-note">
+        <p class="title-annotation">{{ annotation.activitySubject }}</p>
+        <span class="date-annotation">
           <mat-icon class="icon-date">event</mat-icon>
-          {{ note.activityDate | date : "dd/MM/yy" }}
+          {{ annotation.activityDate | date : "dd/MM/yy" }}
         </span>
         <mat-icon class="icon-arrow">arrow_forward_ios</mat-icon>
       </div>
     </div>
-    <button class="add-note">adicionar nova anotação</button>
+    <button class="add-annotation">adicionar nova anotação</button>
   </div>
 </section>
 <app-loading *ngIf="loading"></app-loading>

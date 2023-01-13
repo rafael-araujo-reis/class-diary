@@ -1,4 +1,4 @@
-<section *ngIf="student" class="container-notes">
+<section *ngIf="student" class="container-annotations">
   <header class="header">
     <div
       class="image"
@@ -10,7 +10,7 @@
       {{ student.nameStudent.name }} {{ student.nameStudent.surname }}
     </h1>
 
-    <button class="back" (click)="goToNotesStudent()">
+    <button class="back" (click)="goToAnnotationsStudent()">
       <mat-icon class="icon">arrow_back</mat-icon>
     </button>
   </header>

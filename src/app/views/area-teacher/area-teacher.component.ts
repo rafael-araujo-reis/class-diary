@@ -2,7 +2,7 @@ import { RouterEnum } from './../../shared/constants/RouterEnum.enum';
 import { RouterNavigate } from './../../shared/utils/router-navigate';
 import { Component, OnInit } from '@angular/core';
 import { IListSchoolSubject } from './../../interfaces/IMaterials.interface';
-import { IListStudents } from './../../interfaces/IStudents.interface';
+import { IStudent } from './../../interfaces/IStudent.interface';
 import { SchoolSubjectService } from './../../services/school-subject.service';
 import { StudentsService } from './../../services/students.service';
 
@@ -26,7 +26,7 @@ export class AreaTeacherComponent implements OnInit {
   };
 
   listSchoolSubject: IListSchoolSubject[] = [];
-  listStudents: IListStudents[] = [];
+  listStudents: IStudent[] = [];
 
   constructor(
     private studentsService: StudentsService,
@@ -65,7 +65,7 @@ export class AreaTeacherComponent implements OnInit {
       .subscribe((listStudents) => this.updateListStudents(listStudents));
   }
 
-  private updateListStudents(listStudents: IListStudents[]) {
+  private updateListStudents(listStudents: IStudent[]) {
     this.listStudents = listStudents;
     this.loading = false;
   }

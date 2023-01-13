@@ -1,5 +1,5 @@
-import { NoteDetailsComponent } from './views/notes/note-details/note-details.component';
-import { NotesStudentComponent } from './views/notes/notes-student/notes-student.component';
+import { AnnotationDetailsComponent } from './views/annotations/annotation-details/annotation-details.component';
+import { AnnotationsStudentComponent } from './views/annotations/annotations-student/annotations-student.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RouterEnum } from './shared/constants/RouterEnum.enum';
@@ -29,11 +29,11 @@ const routes: Routes = [
   },
   {
     path: RouterEnum.NOTES_STUDENT,
-    component: NotesStudentComponent,
+    component: AnnotationsStudentComponent,
   },
   {
     path: RouterEnum.NOTE_DETAILS,
-    component: NoteDetailsComponent,
+    component: AnnotationDetailsComponent,
   },
   {
     path: '**',

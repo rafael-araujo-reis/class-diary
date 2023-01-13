@@ -1,6 +1,6 @@
 import { RouterEnum } from './../../../shared/constants/RouterEnum.enum';
 import { RouterNavigate } from 'src/app/shared/utils/router-navigate';
-import { IListStudents } from './../../../interfaces/IStudents.interface';
+import { IStudent } from './../../../interfaces/IStudent.interface';
 import { StudentsService } from './../../../services/students.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./student-details.component.scss'],
 })
 export class StudentDetailsComponent implements OnInit {
-  student: IListStudents | undefined;
+  student: IStudent | undefined;
   id: string = '';
 
   constructor(
@@ -31,7 +31,7 @@ export class StudentDetailsComponent implements OnInit {
   getDetailsStudentById(id: string) {
     return this.studentsService
       .getDetailsStudentById(id)
-      .subscribe((student: IListStudents) => (this.student = student));
+      .subscribe((student: IStudent) => (this.student = student));
   }
 
   goToAreaTeacher() {

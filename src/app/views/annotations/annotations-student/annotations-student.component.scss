@@ -2,7 +2,7 @@
 
 $header-height: 20rem;
 
-.container-notes {
+.container-annotations {
   position: relative;
 
   .header {
@@ -77,14 +77,14 @@ $header-height: 20rem;
         flex-direction: column;
         gap: 0.8rem;
 
-        .title-note {
+        .title-annotation {
           font-weight: 700;
           font-size: 1.6rem;
 
           color: $main;
         }
 
-        .date-note {
+        .date-annotation {
           display: inline-flex;
           align-items: center;
           gap: 0.4rem;
@@ -105,7 +105,7 @@ $header-height: 20rem;
       }
     }
 
-    .add-note {
+    .add-annotation {
       position: fixed;
       z-index: 1000000 !important;
 

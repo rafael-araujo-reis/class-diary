@@ -1,4 +1,4 @@
-import { IListStudents } from './../interfaces/IStudents.interface';
+import { IStudent } from './../interfaces/IStudent.interface';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -11,13 +11,13 @@ export class StudentsService {
 
   constructor(private http: HttpClient) {}
 
-  getListStudents(): Observable<IListStudents[]> {
-    return this.http.get<IListStudents[]>(this.url).pipe();
+  getListStudents(): Observable<IStudent[]> {
+    return this.http.get<IStudent[]>(this.url).pipe();
   }
 
-  getDetailsStudentById(id: string): Observable<IListStudents> {
+  getDetailsStudentById(id: string): Observable<IStudent> {
     const url = `${this.url}/${id}`;
 
-    return this.http.get<IListStudents>(url).pipe();
+    return this.http.get<IStudent>(url).pipe();
   }
 }
