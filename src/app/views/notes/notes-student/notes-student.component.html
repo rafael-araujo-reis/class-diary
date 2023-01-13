@@ -19,7 +19,12 @@
     <h2 class="title-page">Anotações das atividades</h2>
 
     <div class="cards">
-      <div class="card" *ngFor="let note of listNotesStudent">
+      <div
+        class="card"
+        *ngFor="let note of listNotesStudent"
+        [id]="note.id"
+        (click)="viewDetailsNote($event)"
+      >
         <p class="title-note">{{ note.activitySubject }}</p>
         <span class="date-note">
           <mat-icon class="icon-date">event</mat-icon>
@@ -28,6 +33,7 @@
         <mat-icon class="icon-arrow">arrow_forward_ios</mat-icon>
       </div>
     </div>
+    <button class="add-note">adicionar nova anotação</button>
   </div>
 </section>
 <app-loading *ngIf="loading"></app-loading>

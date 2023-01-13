@@ -64,7 +64,7 @@ $header-height: 20rem;
       gap: 1.6rem;
 
       margin-top: 1.2rem;
-      padding-bottom: 10rem;
+      padding-bottom: 12.5rem;
 
       .card {
         border: 0.1rem solid $blue-light;
@@ -103,6 +103,21 @@ $header-height: 20rem;
           color: $blue;
         }
       }
+    }
+
+    .add-note {
+      position: fixed;
+      z-index: 1000000 !important;
+
+      padding: 1.2rem;
+
+      border: none;
+      color: $white;
+      background-color: $green;
+
+      inset: 0;
+      top: initial;
+      bottom: 7.5rem;
     }
   }
 }

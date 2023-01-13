@@ -1,6 +1,6 @@
 import { INote } from './../../../interfaces/INote.interface';
 import { NotesService } from './../../../services/notes.service';
-import { IListStudents } from './../../../interfaces/IStudents.interface';
+import { IListStudent } from './../../../interfaces/IStudents.interface';
 import { StudentsService } from './../../../services/students.service';
 import { ActivatedRoute } from '@angular/router';
 import { RouterNavigate } from './../../../shared/utils/router-navigate';
@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notes-student.component.scss'],
 })
 export class NotesStudentComponent implements OnInit {
-  student: IListStudents | undefined;
+  student: IListStudent | undefined;
   idStudent: string = '';
   loading: boolean = true;
   listNotesStudent: INote[] = [];
@@ -31,7 +31,7 @@ export class NotesStudentComponent implements OnInit {
     });
 
     this.getDetailsStudentById(this.idStudent);
-    this.searchNotesStudents(this.idStudent);
+    this.searchNotesStudents();
   }
 
   goToHomeDiary() {
@@ -41,21 +41,28 @@ export class NotesStudentComponent implements OnInit {
   getDetailsStudentById(id: string) {
     return this.studentsService
       .getDetailsStudentById(id)
-      .subscribe((student: IListStudents) =>
-        this.updateDetailsStudent(student)
-      );
+      .subscribe((student: IListStudent) => this.updateDetailsStudent(student));
   }
 
-  updateDetailsStudent(student: IListStudents) {
+  updateDetailsStudent(student: IListStudent) {
     this.student = student;
     this.loading = false;
-    console.log(this.student);
   }
 
-  searchNotesStudents(idStudent: string) {
-    return this.note
-      .getListNotesStudentByIdStudent(idStudent)
-      .subscribe((notes: INote[]) => this.updateNotesStudent(notes));
+  searchNotesStudents() {
+    return this.note.listNotes.subscribe((notes: INote[]) =>
+      this.updateNotesStudent(notes)
+    );
+  }
+
+  viewDetailsNote(event: any) {
+    const { id } = event.target;
+
+    if (id) {
+      this.router.navigatePath(RouterEnum.NOTE_DETAILS, {
+        queryParams: { id: id },
+      });
+    }
   }
 
   private updateNotesStudent(notes: INote[]) {
