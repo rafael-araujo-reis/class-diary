@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.co
 import { HomepageComponent } from './homepage/homepage.component';
 import { StudentDetailsComponent } from './students/student-details/student-details.component';
 import { NotesStudentComponent } from './notes/notes-student/notes-student.component';
+import { NoteDetailsComponent } from './notes/note-details/note-details.component';
 @NgModule({
   declarations: [
     HomepageComponent,
@@ -15,6 +16,7 @@ import { NotesStudentComponent } from './notes/notes-student/notes-student.compo
     AreaTeacherComponent,
     StudentDetailsComponent,
     NotesStudentComponent,
+    NoteDetailsComponent,
   ],
   imports: [CommonModule, MatIconModule, ComponentsModule],
 })
