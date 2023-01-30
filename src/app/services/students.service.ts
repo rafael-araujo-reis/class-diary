@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class StudentsService {
-  url: string = 'http://192.168.1.5:3000/students';
+  url: string = 'http://192.168.1.9:3000/students';
 
   constructor(private http: HttpClient) {}
 

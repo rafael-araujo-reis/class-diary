@@ -8,7 +8,7 @@ import { Observable, retry } from 'rxjs';
 })
 export class MenuApplicationService {
   // url = 'http://localhost:3000/menu';
-  url = 'http://192.168.1.5:3000/menu';
+  url = 'http://192.168.1.9:3000/menu';
 
   constructor(private http: HttpClient) {}
 

@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AnnotationsService {
-  url: string = 'http://192.168.1.5:3000/annotations';
+  url: string = 'http://192.168.1.9:3000/annotations';
 
   constructor(private http: HttpClient) {}
 
