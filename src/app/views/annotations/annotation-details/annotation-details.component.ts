@@ -1,3 +1,6 @@
+import { StudentsService } from './../../../services/students.service';
+import { SchoolSubjectService } from './../../../services/school-subject.service';
+import { IListSchoolSubject } from './../../../interfaces/IMaterials.interface';
 import { IAnnotation } from './../../../interfaces/IAnnotation.interface';
 import { AnnotationsService } from './../../../services/annotations.service';
 import { RouterNavigate } from './../../../shared/utils/router-navigate';
@@ -12,21 +15,50 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./annotation-details.component.scss'],
 })
 export class AnnotationDetailsComponent implements OnInit {
-  student: IStudent | undefined;
+  student!: IStudent;
   idAnnotation: string = '';
-  annotation: IAnnotation | undefined;
+  annotation!: IAnnotation;
+  countCharacters: number = 0;
+  maxCharacters: number = 400;
+  listSchoolSubject: IListSchoolSubject[] = [];
+
+  idStudent = '';
 
   constructor(
     private router: RouterNavigate,
     private routeActive: ActivatedRoute,
+    private schoolSubjectService: SchoolSubjectService,
+    private studentsService: StudentsService,
     private annotations: AnnotationsService
-  ) {}
-
-  ngOnInit(): void {
+  ) {
     this.routeActive.queryParams.subscribe((params) => {
       this.idAnnotation = params['id'] || '';
     });
     this.getAnnotationDetails(this.idAnnotation);
+  }
+
+  ngOnInit(): void {
+    this.getListSchoolSubject();
+  }
+
+  getDetailsStudentById(id: string) {
+    console.log('id', id);
+    return this.studentsService
+      .getDetailsStudentById(id)
+      .subscribe((student: IStudent) => (this.student = student));
+  }
+
+  getListSchoolSubject() {
+    return this.schoolSubjectService
+      .getListSchoolSubject()
+      .subscribe((listSchoolSubject) =>
+        this.updateListSchoolSubject(listSchoolSubject)
+      );
+  }
+
+  private updateListSchoolSubject(listSchoolSubject: IListSchoolSubject[]) {
+    this.listSchoolSubject = listSchoolSubject;
+    // this.loading = false;
   }
 
   getAnnotationDetails(idAnnotation: string) {
@@ -37,7 +69,8 @@ export class AnnotationDetailsComponent implements OnInit {
 
   updateAnnotationData(annotation: IAnnotation) {
     this.annotation = annotation;
-    console.log(this.annotation);
+    this.idStudent = annotation.idStudent;
+    this.getDetailsStudentById(this.idStudent);
   }
 
   goToAnnotationsStudent() {

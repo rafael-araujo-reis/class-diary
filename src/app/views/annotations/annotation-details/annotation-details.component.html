@@ -1,5 +1,5 @@
-<section *ngIf="student" class="container-annotations">
-  <header class="header">
+<section class="container-annotations">
+  <header class="header" *ngIf="student">
     <div
       class="image"
       [ngStyle]="{
@@ -14,4 +14,98 @@
       <mat-icon class="icon">arrow_back</mat-icon>
     </button>
   </header>
+
+  <div class="contente">
+    <h2 class="title-page">Adicionar anotação</h2>
+
+    <div class="input">
+      <label for="dateActivity">data da atividade</label>
+      <input
+        type="date"
+        name="dateActivity"
+        id="dateActivity"
+        [value]="annotation.activityDate"
+      />
+    </div>
+
+    <div class="input">
+      <label for="subject">assunto</label>
+      <input
+        type="text"
+        name="subject"
+        id="subject"
+        [value]="annotation.activitySubject"
+      />
+    </div>
+
+    <div>
+      <div class="listSchoolSubject">
+        <label>matéria aplicada</label>
+
+        <div class="container-materials">
+          <div
+            class="card"
+            *ngFor="let schoolSubject of listSchoolSubject"
+            [id]="schoolSubject.id"
+          >
+            <div
+              class="image"
+              [ngStyle]="{
+                'background-image': 'url(' + schoolSubject.urlImage + ')'
+              }"
+            ></div>
+            <div class="description-card">
+              <p class="title">{{ schoolSubject.matter }}</p>
+              <span class="subtitle">{{ schoolSubject.seriesBelonging }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="input">
+      <label for="pagesNumber">informe o número das páginas</label>
+      <input
+        type="number"
+        name="pagesNumber"
+        id="pagesNumber"
+        [value]="annotation.pageNumber"
+        placeholder="exemplo: 02, 03, 05"
+      />
+    </div>
+
+    <hr class="divider" />
+
+    <p class="optional-items">
+      os campos abaixos são opcionais para o registro dessa anotação
+    </p>
+
+    <div class="upload">
+      <label for="uploadFile">
+        <mat-icon class="icon">photo_camera</mat-icon>
+        enviar foto da atividade</label
+      >
+      <input type="file" name="uploadFile" id="uploadFile" />
+    </div>
+
+    <div class="container-info-additional">
+      <label for="additionalInformation"> informações adicionais </label>
+      <textarea
+        name="additionalInformation"
+        id="additionalInformation"
+        class="additionalInformation"
+      >
+  {{ annotation.additionalInformation }}
+    </textarea
+      >
+      <span class="info-size"
+        >{{ countCharacters }} de {{ maxCharacters }} caracteres</span
+      >
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button class="add">adicionar anotação</button>
+    <button class="exit">sair e descartar anotação</button>
+  </div>
 </section>
