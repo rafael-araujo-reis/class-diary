@@ -30,7 +30,7 @@ export class AreaTeacherComponent implements OnInit {
 
   constructor(
     private studentsService: StudentsService,
-    private SchoolSubjectService: SchoolSubjectService,
+    private schoolSubjectService: SchoolSubjectService,
     private router: RouterNavigate
   ) {}
 
@@ -71,9 +71,11 @@ export class AreaTeacherComponent implements OnInit {
   }
 
   getListSchoolSubject() {
-    return this.SchoolSubjectService.getListSchoolSubject().subscribe(
-      (listSchoolSubject) => this.updateListSchoolSubject(listSchoolSubject)
-    );
+    return this.schoolSubjectService
+      .getListSchoolSubject()
+      .subscribe((listSchoolSubject) =>
+        this.updateListSchoolSubject(listSchoolSubject)
+      );
   }
 
   private updateListSchoolSubject(listSchoolSubject: IListSchoolSubject[]) {
